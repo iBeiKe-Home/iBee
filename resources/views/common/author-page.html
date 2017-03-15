@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ruofeng's profile</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="css/uikit.css"/>
+    <link rel="stylesheet" href="asset/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.lug.ustc.edu.cn/css?family=Open+Sans" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/uikit.min.js"></script>
+    <style>
+   	#logo{
+        height: 30px;
+    }
+    body{
+    	background: #eee;
+    }
+    .user-profile{
+    	height: 600px;
+    	background: #fff;
+    }
+    .user-avatar{
+    	position: relative;
+    	top: -40px;
+    	left: 40px;
+    	height: 160px;
+    	width: 160px;
+    	float: left;
+    	border: 5px solid white;
+    }
+    .user-avatar img{
+    	height: 160px;
+    	width: 160px;
+    }
+    .user-profile-header{
+    	float: none;
+    	width: 100%;
+    }
+    .user-profile-header p{
+    	line-height: 50px;
+    	text-indent: 60px;
+    	font-size: 2em;
+    	font-weight: bold;
+    	margin-bottom: 0;
+    }
+    .fans-follow-credit{
+    	margin-left: 230px;
+    }
+    .fans-follow-credit span{
+    	display: inline-block;
+    	width: 120px;
+    	font-size: 1.2em;
+    	color: #999;
+    	line-height: 40px;
+    }
+    p.breif-intro{
+    	font-size: 1.5em;
+    	font-weight: normal;
+		line-height: 30px;
+		margin-top: 0;
+    }
+    .button-right{
+    	position: relative;
+    	float: right;
+    	top: -100px;
+    	right: 20px;
+    }
+    .user-profile-bottom{
+    	margin-top: 30px;
+    }
+    .his-article{
+    	background: #eee;
+		height: 250px;
+    }
+    .his-article-img{
+    	height: 150px;
+    	overflow: hidden;
+    }
+    .his-article-img img{
+    	width: 100%;
+    }
+    .his-article-title a{
+		text-decoration: none;
+		text-indent: 25px;
+    }
+    .his-article-info{
+        padding: 0px 25px 15px 25px;
+        height: 30px;
+    }
+    .uk-badge{
+        padding: 6px 8px;
+    }
+    .his-article-info span{
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .article-likes{
+        display: inline-block;
+        float: right;
+    }
+    .article-likes span{
+        font-size: 18px !important;
+        line-height: 28px !important;
+    }
+    .article-comments{
+        display: inline-block;
+        float: right;
+        margin-right: 15px;
+    }
+    .article-comments span{
+        font-size: 18px !important;
+        line-height: 28px !important;
+    }
+    .ibee-footer{
+        height: 20px;
+        background: #333;
+        color: #fff;
+        padding: 20px;
+        font-size: 1.2em;
+        line-height: 20px;
+    }
+    .ibee-footer a{
+        color: #fff;
+        text-decoration: none;
+        margin-right: 10px;
+    }
+    </style>
+
+</head>
+<body>
+	<nav class="uk-navbar">
+        <a href="index.html" class="uk-navbar-brand"><img src="asset/img/logo2.png" id="logo"></a>
+        <ul class="uk-navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li class="uk-parent" data-uk-dropdown="{mode:'click'}"><a>More <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+            <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-bottom">
+                <ul class="uk-nav uk-nav-dropdown">
+                    <li><a href="#">Site 1</a></li>
+                    <li><a href="#">Site 2</a></li>
+                </ul>
+            </div>
+            </li>              
+        </ul>
+        <div class="uk-navbar-flip">
+            <div class="uk-navbar-content"> 
+                <form action="" class="uk-form uk-display-inline-block">
+                    <input type="text" placeholder="Search...">
+                    <button class="uk-button uk-button-primary">Search</button>
+                </form>
+            </div>
+            <ul class="uk-navbar-nav">
+            <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+            </ul>
+            </div> 
+    </nav>
+	<div class="uk-container uk-container-center">
+	<div style="height: 160px;"></div>
+		<div class="uk-width-5-6 uk-container-center">
+			<div class="user-profile">
+				<div class="user-avatar">
+					<img src="asset/img/gravatar.png">
+				</div>
+				<div class="user-profile-header">
+					<p>Ruofeng</p>
+					<div class="fans-follow-credit">
+					<span>10 followers</span>
+					<span>21 following</span>
+					<span>233 credit</span>
+					</div>
+					<p class="breif-intro">He left nothing here</p>
+				</div>
+				<div class="button-right">
+					<button class="uk-button uk-button-primary"><i class="fa fa-plus" aria-hidden="true"></i> follow</button>
+					<button class="uk-button uk-button-primary"><i class="fa fa-envelope-o" aria-hidden="true"></i> message</button>
+				</div>
+				<div class="user-profile-bottom">
+					<ul class="uk-tab" data-uk-tab="{connect:'#profile-tab'}">
+					    <li class="uk-active"><a href="">His profiole</a></li>
+					    <li><a href="">His iBee</a></li>
+					</ul>
+					<ul id="profile-tab" class="uk-switcher uk-margin">
+						<li>
+						<div class="uk-width-5-6 uk-container-center">
+							<table class="uk-table uk-table-hover">
+							        <tr>
+							        	<th>Email</th>
+							        	<td>lrf0829@126.com</td>
+							        </tr>
+							        <tr>
+							        	<th>Tel.</th>
+							        	<td>stuff 2</td>
+							        </tr>
+							        <tr>
+							        	<th>Gender</th>
+							        	<td>Unknown</td>
+							        </tr>
+							        <tr>
+							        	<th>Birthday</th>
+							        	<td>8-29</td>
+							        </tr>
+							        <tr>
+							        	<th>Addr.</th>
+							        	<td>9#536</td>
+							        </tr>
+							</table>
+						</div>
+						</li>
+						<li>
+							<div class="uk-width-5-6 uk-container-center">
+								<div class="his-article">
+
+									<div class="his-article-img">
+										<a href="article.html"><img src="asset/img/article_img.jpg"></a>
+									</div>
+
+									<div class="his-article-title">
+					                    <a href="article.html"><h1>This is an awesome article</h1></a>
+					                </div>
+					                <div class="his-article-info">
+				                    	<div class="uk-badge"><span>Fasion</span></div>
+				                        <div class="article-likes">
+				                            <i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i><span>41</span>
+				                        </div>
+				                        <div class="article-comments">
+				                            <i class="fa fa-comments fa-2x" aria-hidden="true"></i><span>6</span>
+				                        </div>
+				                	</div>
+
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div style="height: 200px;"></div>
+	</div>
+
+	    <footer class="ibee-footer">
+
+    <div class="uk-container uk-container-center">
+        <div class="uk-grid">
+            <div class="uk-width-1-2 uk-text-left">
+                &copy 2017 iBeiKe
+            </div>
+            <div class="uk-width-1-2 uk-text-right">
+                <a href="#">Terms</a>
+                <a href="#">Feedback</a>
+            </div>
+        </div>
+    </div>
+        
+    </footer>
+</body>
+</html>

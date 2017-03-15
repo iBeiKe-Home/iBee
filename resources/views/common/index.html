@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iBee</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" href="static/css/uikit.css"/>
+    <link rel="stylesheet" href="asset/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/components/slideshow.min.css">
+    <link rel="stylesheet" href="css/components/dotnav.min.css">
+    <link rel="stylesheet" href="css/components/slidenav.min.css">
+    
+    <link href="https://fonts.lug.ustc.edu.cn/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/ibee-navbar.css">
+    <link rel="stylesheet" href="css/ibee-index-main.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/uikit.min.js"></script>
+    <script src="js/components/slideshow.min.js"></script>
+    <script src="js/script.js"></script>
+    <style>
+    .uk-slidenav-position{
+        height: 400px;
+    }
+    .uk-slideshow li img {
+        height: 400px!important;
+    }
+    .ibee-horizon-menu{
+        height: 80px;
+        background: #fff;
+        padding: 10px 20px;
+    }
+    .ibee-horizon-menu strong{
+        font-size: 3em;
+        line-height: 60px;
+    }
+    .ibee-horizon-menu-detail li{
+        font-size: 1.8em;
+        list-style: none;
+        display: inline;
+        line-height: 60px;
+        margin-left: 20px;
+    }
+    #modal-logo{
+        display: block;
+        margin: 0 auto;
+    }
+    #signin p{
+        text-align: center;
+        font-size: 1.2em;
+        margin-top: 5px;
+    }
+    #modal-submit{
+        margin-top: 20px;
+        width: 280px;
+    }
+    #modal-submit label{
+        float: left;
+        font-size: 14px;
+        line-height: 30px;  
+    }
+    #modal-submit label input{
+        width: 18px;
+        height: 18px;
+        vertical-align: middle;
+        margin-right: 4px;
+    }
+    #modal-submit button{
+        float: right;
+    }
+    .ibee-article{
+        background: #fff;
+        height: 365px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        z-index: 100;
+    }
+    .ibee-article-author-date{
+        padding: 10px 25px;
+        height: 50px;
+    }
+    .ibee-article-author-date img{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid #aaa;
+        margin-right: 10px;
+    }
+    .ibee-article-author-date span{
+        font-size: 1.4em;
+        line-height: 50px;
+    }
+    .ibee-article-author-date time{
+        float: right;
+        line-height: 50px;
+        font-size: 1.2em;
+    }
+    .ibee-article-img{
+        height: 200px;
+        overflow: hidden;
+    }
+    .ibee-article-img img{
+        width: 100%;
+    }
+    .ibee-article-title{
+        height: 50px;
+        padding: 0 25px;
+    }
+    .ibee-article-title h1{
+        font-size: 34px;
+        line-height: 50px;
+    }
+    .ibee-article-title a{
+        text-decoration: none;
+    }
+    .ibee-article-info{
+        padding: 0px 25px 15px 25px;
+        height: 30px;
+    }
+    .uk-badge{
+        padding: 6px 8px;
+    }
+    .ibee-article-info span{
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .article-likes{
+        display: inline-block;
+        float: right;
+    }
+    .article-likes span{
+        font-size: 20px !important;
+        line-height: 28px !important;
+    }
+    .article-comments{
+        display: inline-block;
+        float: right;
+        margin-right: 15px;
+    }
+    .article-comments span{
+        font-size: 20px !important;
+        line-height: 28px !important;
+    }
+    .ibee-footer{
+        height: 20px;
+        background: #333;
+        color: #fff;
+        padding: 20px;
+        font-size: 1.2em;
+        line-height: 20px;
+    }
+    .ibee-footer a{
+        color: #fff;
+        text-decoration: none;
+        margin-right: 10px;
+    }
+    #ibee-back-to-top{
+        position: fixed;;
+        bottom: 100px;
+        right: 100px;
+    }
+    #ibee-back-to-top a i{
+        opacity: 0.6;               
+        color: #F7C205; 
+    }
+    </style>
+</head>
+<body>
+    <nav class="uk-navbar">
+        <a href="#" class="uk-navbar-brand"><img src="asset/img/logo2.png" id="logo"></a>
+        <ul class="uk-navbar-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="edit.html">Post</a></li>
+            <li class="uk-parent" data-uk-dropdown="{mode:'click'}"><a>More <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+            <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-bottom">
+                <ul class="uk-nav uk-nav-dropdown">
+                    <li><a href="#">Site 1</a></li>
+                    <li><a href="#">Site 2</a></li>
+                </ul>
+            </div>
+            </li>              
+        </ul>
+        <div class="uk-navbar-flip">
+            <div class="uk-navbar-content"> 
+                <form action="" class="uk-form uk-display-inline-block">
+                    <input type="text" placeholder="Search...">
+                    <button class="uk-button uk-button-primary">Search</button>
+                </form>
+            </div>
+            <ul class="uk-navbar-nav">
+            <li><a href="#signin" data-uk-modal>Sign in</a></li>
+            <li><a href="">Sign up</a></li>
+            </ul>
+            </div> 
+    </nav>
+    <div class="uk-slidenav-position" data-uk-slideshow="{animation: 'scroll'}">
+        <ul class="uk-slideshow">
+            <li data-uk-slideshow-item="0"><img src="asset/img/1.jpg"></li>
+            <li data-uk-slideshow-item="1"><img src="asset/img/2.jpg"></li>
+            <li data-uk-slideshow-item="2"><img src="asset/img/3.jpg"></li>
+            <li data-uk-slideshow-item="3"><img src="asset/img/4.jpg"></li>
+            <li data-uk-slideshow-item="4"><img src="asset/img/5.jpg"></li>
+        </ul>
+        <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
+        <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>
+        <ul class="uk-dotnav uk-dotnav-contrast uk-position-bottom uk-text-center uk-flex-center">
+        <li data-uk-slideshow-item="0"><a href=""></a></li>
+        <li data-uk-slideshow-item="1"><a href=""></a></li>
+        <li data-uk-slideshow-item="2"><a href=""></a></li>
+        <li data-uk-slideshow-item="3"><a href=""></a></li>
+        <li data-uk-slideshow-item="4"><a href=""></a></li>
+        </ul>
+    </div>
+    <div class="uk-container uk-container-center">
+        <div class="ibee-horizon-menu uk-width-1-1 uk-container-center">
+            <div class="uk-grid">
+            <div class="uk-width-1-10"><strong>Class</strong></div>
+            <div class="uk-width-9-10 ibee-horizon-menu-detail"> <ul>
+                <li>Tech</li>
+                <li>Game</li>
+                <li>Life</li>
+                <li>Photo</li>
+                <li>Trip</li>
+                <li>Fit</li>
+                <li>Fasion</li>
+                <li>Video</li>
+                <li>Source</li>
+                <li>Other</li>
+            </ul>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="ibee-content">
+        <div class="uk-container uk-container-center">
+            <div class="uk-width-5-6 uk-container-center ibee-article">
+                <div class="ibee-article-author-date">
+                    <a href="author-page.html"><img src="asset/img/gravatar.png" class="author-gravatar"></a>
+                    <span class="author-id">Ruofeng</span>
+                    <time><em>2000-1-1</em></time>
+                </div>
+                <div class="ibee-article-img">
+                    <a href="article.html"><img src="asset/img/article_img.jpg"></a>
+                </div>
+                <div class="ibee-article-title">
+                    <a href="article.html"><h1>This is an awesome article</h1></a>
+                </div>
+                <div class="ibee-article-info">
+                    <div class="uk-badge"><span>Fasion</span></div>
+                        <div class="article-likes">
+                            <i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i><span>41</span>
+                        </div>
+                        <div class="article-comments">
+                            <i class="fa fa-comments fa-2x" aria-hidden="true"></i><span>6</span>
+                        </div>
+                </div>
+            </div>
+            <div class="uk-width-5-6 uk-container-center ibee-article">
+                <div class="ibee-article-author-date">
+                    <a href="author-page.html"><img src="asset/img/gravatar.png" class="author-gravatar"></a>
+                    <span class="author-id">Ruofeng</span>
+                    <time><em>2000-1-1</em></time>
+                </div>
+                <div class="ibee-article-img">
+                    <a href="article.html"><img src="asset/img/article_img.jpg"></a>
+                </div>
+                <div class="ibee-article-title">
+                    <a href="article.html"><h1>This is an awesome article</h1></a>
+                </div>
+                <div class="ibee-article-info">
+                    <div class="uk-badge"><span>Fasion</span></div>
+                        <div class="article-likes">
+                            <i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i><span>41</span>
+                        </div>
+                        <div class="article-comments">
+                            <i class="fa fa-comments fa-2x" aria-hidden="true"></i><span>6</span>
+                        </div>
+                </div>
+            </div><div class="uk-width-5-6 uk-container-center ibee-article">
+                <div class="ibee-article-author-date">
+                    <a href="author-page.html"><img src="asset/img/gravatar.png" class="author-gravatar"></a>
+                    <span class="author-id">Ruofeng</span>
+                    <time><em>2000-1-1</em></time>
+                </div>
+                <div class="ibee-article-img">
+                    <a href="article.html"><img src="asset/img/article_img.jpg"></a>
+                </div>
+                <div class="ibee-article-title">
+                    <a href="article.html"><h1>This is an awesome article</h1></a>
+                </div>
+                <div class="ibee-article-info">
+                    <div class="uk-badge"><span>Fasion</span></div>
+                        <div class="article-likes">
+                            <i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i><span>41</span>
+                        </div>
+                        <div class="article-comments">
+                            <i class="fa fa-comments fa-2x" aria-hidden="true"></i><span>6</span>
+                        </div>
+                </div>
+            </div><div class="uk-width-5-6 uk-container-center ibee-article">
+                <div class="ibee-article-author-date">
+                    <a href="author-page.html"><img src="asset/img/gravatar.png" class="author-gravatar"></a>
+                    <span class="author-id">Ruofeng</span>
+                    <time><em>2000-1-1</em></time>
+                </div>
+                <div class="ibee-article-img">
+                    <a href="article.html"><img src="asset/img/article_img.jpg"></a>
+                </div>
+                <div class="ibee-article-title">
+                    <a href="article.html"><h1>This is an awesome article</h1></a>
+                </div>
+                <div class="ibee-article-info">
+                    <div class="uk-badge"><span>Fasion</span></div>
+                        <div class="article-likes">
+                            <i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i><span>41</span>
+                        </div>
+                        <div class="article-comments">
+                            <i class="fa fa-comments fa-2x" aria-hidden="true"></i><span>6</span>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+    
+        <div style="height: 60px;background: #F2F2F2;padding: 40px;">
+        <div class="uk-container uk-container-center">
+            <ul class="uk-width-5-6 uk-pagination uk-container-center">
+                <li class="uk-disabled"><span><i class="uk-icon-angle-double-left"></i></span></li>
+                <li class="uk-active"><span>1</span></li>
+                <li><a href=""><span>2</span></a></li>
+                <li><a href=""><span>3</span></a></li>
+                <li><a href=""><span>4</span></a></li>
+                <li><a href=""><span>5</span></a></li>
+                <li class=""><a href=""><i class="uk-icon-angle-double-right"></i></a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+
+    <footer class="ibee-footer">
+
+    <div class="uk-container uk-container-center">
+        <div class="uk-grid">
+            <div class="uk-width-1-2 uk-text-left">
+                &copy 2017 iBeiKe
+            </div>
+            <div class="uk-width-1-2 uk-text-right">
+                <a href="#">Terms</a>
+                <a href="#">Feedback</a>
+            </div>
+        </div>
+    </div>
+        
+    </footer>
+
+    <div id="ibee-back-to-top">
+        <a id="toTopButton"><i class="fa fa-arrow-up fa-5x"></i></a>
+    </div>
+
+    <div id="signin" class="uk-modal">
+    <div class="uk-modal-dialog">
+        <a class="uk-modal-close uk-close"></a>
+        <div class="uk-width-1-3 uk-container-center">
+            <img id="modal-logo" src="asset/img/logo2.png" width="120px">
+        </div>
+        <p>Please log in with the iBeiKe account</p>
+            <center>
+        <form class="uk-form">
+            <fieldset>
+            <div class="uk-form-row">
+            <input class="uk-form-large" type="text" placeholder="Email">
+            </div>
+            <div class="uk-form-row">
+            <input class="uk-form-large" type="password" placeholder="Password">
+            </div>
+            <div id="modal-submit">
+                <label><input type="checkbox">Save PW</label>
+                <button class="uk-button uk-button-primary uk-button-large">LOG IN</button>
+            </div>
+            </fieldset>
+        </form>
+            </center>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+/*style of navbar*/
+.uk-navbar{
+	height: 65px;
+	background: #231F20 !important;
+}
+#logo{
+	height: 65px;
+}
+.uk-navbar-nav>li>a{
+	height: 61px;
+	line-height: 61px;
+	font-size: 20px;
+	color: #fff !important;
+	text-transform: none;
+}
+.uk-navbar-nav > li:hover{
+	border-bottom: 4px solid #F7C205;
+}
+.uk-navbar-nav > li:hover > a, .uk-navbar-nav > li > a:focus, .uk-navbar-nav > li.uk-open > a{
+	background-color: #231F20;
+	color: #fff;
+}
+.uk-nav-dropdown > li {
+	background-color: #231F20;
+	/*color: */
+}
+.uk-nav-dropdown > li > a:hover,
+.uk-nav-dropdown > li > a:focus {
+	background: #333;
+}
+.uk-nav-dropdown > li > a{
+	color: #fff;
+}
+
+.uk-navbar-content{
+	height: 65px;
+}
+.uk-dropdown{
+	padding: 0 15px;
+}
+.uk-nav-dropdown > li > a {
+	height: 40px;
+    font-size: 20px;
+    line-height: 40px;
+}
+.uk-navbar-content form button{
+	background-color: #F7C205;
+	color: #231F20;
+}
+.uk-button-primary:hover, .uk-button-primary:focus{
+	background-color: #F5C934 !important;
+	color: #231F20;
+	border:none;
+}
+.uk-navbar-item uk-input:focus{
+	border-color:#F7C205;
+}
+.ibee-content{
+	background-color: #F2F2F2;
+}

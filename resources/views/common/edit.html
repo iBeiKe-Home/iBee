@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Edit Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="css/uikit.css"/>
+    <link rel="stylesheet" href="asset/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.lug.ustc.edu.cn/css?family=Open+Sans" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/uikit.min.js"></script>
+
+
+    <!-- about the text editor -->
+    <link href="https://cdn.quilljs.com/1.1.5/quill.snow.css" rel="stylesheet">
+    <script src="https://cdn.quilljs.com/1.1.5/quill.js"></script>
+    <!-- end -->
+
+    <style>
+   	#logo{
+        height: 30px;
+    }
+    .ibee-above-the-editor{
+    	margin: 40px 0;
+    }
+    .ibee-above-the-editor span{
+    	font-size: 2.5em;
+    	line-height: 40px;
+    }
+
+    </style>
+
+</head>
+<body>
+<nav class="uk-navbar">
+        <a href="index.html" class="uk-navbar-brand"><img src="asset/img/logo2.png" id="logo"></a>
+        <ul class="uk-navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li class="uk-parent" data-uk-dropdown="{mode:'click'}"><a>More <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+            <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-bottom">
+                <ul class="uk-nav uk-nav-dropdown">
+                    <li><a href="#">Site 1</a></li>
+                    <li><a href="#">Site 2</a></li>
+                </ul>
+            </div>
+            </li>              
+        </ul>
+        <div class="uk-navbar-flip">
+            <div class="uk-navbar-content"> 
+                <form action="" class="uk-form uk-display-inline-block">
+                    <input type="text" placeholder="Search...">
+                    <button class="uk-button uk-button-primary">Search</button>
+                </form>
+            </div>
+            <ul class="uk-navbar-nav">
+            <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+            </ul>
+            </div> 
+    </nav>
+    <div class="uk-container uk-container-center">
+    	<div class="ibee-above-the-editor">
+    			<span>Write an article</span>
+    		<div class="ibee-button-group uk-align-right">
+    			<button class="uk-button uk-button-large uk-button-primary">Save as draft</button>
+    			<button class="uk-button uk-button-large uk-button-success">Submit</button>
+    			<button class="uk-button uk-button-large uk-button-danger">Abort</button>
+    		</div>
+    	</div>
+
+    	<div id="editor">
+  			<p>Hello World!</p>
+  			<p>Some initial <strong>bold</strong> text</p>
+  			<p><br></p>
+		</div>
+    </div>
+    
+	<script>
+      var quill = new Quill('#editor', {
+        theme: 'snow'
+      });
+    </script>
+
+</body>
+</html>

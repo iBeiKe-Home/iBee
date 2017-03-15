@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>This is an awesome article</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="css/uikit.css"/>
+    <link rel="stylesheet" href="asset/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.lug.ustc.edu.cn/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/ibee-navbar.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/uikit.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<style>
+	html{
+		background: #F2F2F2;
+	}
+	.article-header{
+		background: #fff;
+		height: 410px;
+    }
+    .article-img{
+    	height: 350px;
+    	overflow: hidden;
+    }
+    .article-img img{
+    	width: 100%;
+    }
+    .article-info{
+        padding: 15px 25px 15px 25px;
+        height: 30px;
+    }
+    .article-info time em{
+    	color: black;
+    	margin-right: 20px;
+    	font-size: 1.2em;
+    	line-height: 30px;
+    }
+    .uk-label{
+        padding: 6px 8px;
+    }
+    .article-info span{
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .article-likes{
+        display: inline-block;
+        float: right;
+    }
+    .article-likes span{
+        font-size: 18px !important;
+        line-height: 28px !important;
+    }
+    .article-comments{
+        display: inline-block;
+        float: right;
+        margin-right: 15px;
+    }
+    .article-comments span{
+        font-size: 18px !important;
+        line-height: 28px !important;
+    }
+	.article-content{
+		background: #fff;
+		padding: 25px;
+	}
+	.article-title{
+		text-align: center;
+	}
+	.article-title h1{
+		font-weight: bold;
+	}
+	.article-side{
+		background: #fff;
+	}
+	.side-author-info{
+		height: 235px;
+	}
+	.side-author-img{
+		height: 120px;
+		width: 120px;
+		margin:25px;
+		display: inline-block;
+	}
+	.side-author-id-posts{
+		max-width: 208px;
+		margin: 25px 25px 25px 0;
+		display: inline-block;
+	}
+	p#author-id{
+		font-size: 1.5em;
+		font-weight: bold;
+	}
+	p#author-posts{
+		font-size: 1.1em;
+	}
+	.side-author-buttons{
+		margin: 0 25px;
+	}
+	.side-author-buttons button{
+		width: 140px;
+	}
+	.side-other-article{
+		height: 600px;
+	}
+
+	#modal-logo{
+        display: block;
+        margin: 0 auto;
+    }
+    #signin p{
+        text-align: center;
+        font-size: 1.2em;
+        margin-top: 5px;
+    }
+    #modal-submit{
+        margin-top: 20px;
+        width: 280px;
+    }
+    #modal-submit label{
+        float: left;
+        font-size: 14px;
+        line-height: 30px;
+    }
+    #modal-submit label input{
+        width: 18px;
+        height: 18px;
+        vertical-align: middle;
+        margin-right: 4px;
+    }
+    #modal-submit button{
+        float: right;
+    }
+    .ibee-footer{
+        height: 20px;
+        background: #333;
+        color: #fff;
+        padding: 20px;
+        font-size: 1.2em;
+        line-height: 20px;
+    }
+    .ibee-footer a{
+        color: #fff;
+        text-decoration: none;
+        margin-right: 10px;
+    }
+    #ibee-back-to-top{
+        position: fixed;;
+        bottom: 100px;
+        right: 100px;
+    }
+    #ibee-back-to-top a i {
+        opacity: 0.6;
+        color: #F7C205;
+    }
+</style>
+<body>
+	
+	<nav class="uk-navbar">
+        <a href="index.html" class="uk-navbar-brand"><img src="asset/img/logo2.png" id="logo"></a>
+        <ul class="uk-navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="edit.html">Post</a></li>
+            <li class="uk-parent" data-uk-dropdown="{mode:'click'}"><a>More <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+            <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-bottom">
+                <ul class="uk-nav uk-nav-dropdown">
+                    <li><a href="#">Site 1</a></li>
+                    <li><a href="#">Site 2</a></li>
+                </ul>
+            </div>
+            </li>              
+        </ul>
+        <div class="uk-navbar-flip">
+            <div class="uk-navbar-content"> 
+                <form action="" class="uk-form uk-display-inline-block">
+                    <input type="text" placeholder="Search...">
+                    <button class="uk-button uk-button-primary">Search</button>
+                </form>
+            </div>
+            <ul class="uk-navbar-nav">
+            <li><a href="#signin" data-uk-modal>Sign in</a></li>
+            <li><a href="">Sign up</a></li>
+            </ul>
+            </div> 
+    </nav>
+
+
+	<div style="height: 100px"></div>
+	<div class="uk-container uk-container-center">
+			<div class="uk-container-center article-header">
+				<div class="article-img">
+				<img src="asset/img/article_img.jpg">
+				</div>
+			<div class="article-info">
+			<time><em>2000-1-1</em></time>
+				   <div class="uk-label"><span>Fasion</span></div>
+				      <div class="article-likes">
+				          <i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i><span>41</span>
+				      </div>
+				      <div class="article-comments">
+				          <i class="fa fa-comments fa-2x" aria-hidden="true"></i><span>6</span>
+				      </div>
+			</div>			
+			</div>
+			<div style="height: 35px;"></div>
+			<div class="uk-grid">
+				<div class="uk-width-2-3">
+					<div class="article-content">
+						<div class="article-title">
+							<h1>This is How to be Super Productive Every Day Without Losing Your Mind</h1>
+						</div>
+						<div class="article-body">
+							<p>You will work better when you find and stick to habits that work best for you. You can’t use every productive habit you read about. The most insanely prouductive people stick to habits that produce the most results. They consistently act purposefully in order to maximize every minute of every day. You can achieve high performance if you focus on the right things at the right time. Here are five ways to do more every week.</p>
+							<h2>1. A productive day begins with a focused mind</h2>
+							<p>Distractions begin as a thought. Don’t allow your mind to wander at your peak times. You don’t want to be disorganized when you should be focusing on your work. It’s very hard to concentrate and be productive when you are constantly distracted. An organized mind can get most things done in a short time because you lose yourself in the process of work.</p>
+							<p>One of the best ways to maintain focus is to find a comfortable position at your desk and don’t allow yourself to move or get distracted easily. Stay away from physical distractions and focus your thoughts on the task. After a while, your mental energy will be channeled completely into your work until it’s done.</p>
+							<p>A disorganized mind on the other hand robs you of your ability to completely immerse yourself in your tasks to get them done on time. Your choices, decisions, and ability to be creative also suffer when your mind is in an invasive state. You can also easily get distracted when you tackle insanely easy or extremely difficult tasks.</p>
+							<h2>2. Master your time to master your life</h2>
+							<p>You have an average of 2,400 minutes every week to yourself. Time is your most valuable asset at work. And time spent can never be reclaimed. A lot can be achieved every week if you know what you are doing at any point in time.</p>
+							<p>Ultra productive people focus on getting a lot done with every minute they have at their disposal. Allocate time to each task you need to get done every day. Each task of the day should be attainable, realistic, and time-bound. The time constraint will push you to focus and be more efficient.</p>
+							<p>Don’t forget to allow downtime between tasks to refresh. Go for a short walk, read a book, or listen to a podcast. Choose a mind-clearing activity that works best for you. Your brain needs a short break to recuperate, and then you are ready to move on to another task.</p>
+							<h2>3. Your weekly tasks should contribute to a meaningful and greater goal</h2>
+							<p>Find out how your everyday tasks fit into larger goals and aspirations of your business or project to keep you motivated to complete what you start each week. If you can’t find a reason why your work matters, the probability of leaving tasks undone until next week will be very high.</p>
+							<p>According to Charles Duhigg, author of Smarter Faster Better, reminding ourselves of how a small action fits into a bigger objective makes it easier to link our small efforts to more meaningful aspirations.</p>
+							<p>This discovery can help you complete even the most boring tasks of the day because you know it’s part of something bigger than yourself. Your contribution can help your company achieve its monthly or annual goals.</p>
+							<h2>4. Focus on the ONE thing that needs to be done every workday</h2>
+							<p>Chances are, you have a lot to do every day but you are probably not getting all of the tasks done within the day. Take the first 30 minutes each day to schedule what needs to be done for the day.</p>
+							<p>What is the very important task on your calendar that needs to be done today? Get that figured out first thing in the morning. Start your day by tackling high-value tasks you can complete in the morning. This will keep you motivated to get the next task done in time.</p>
+							<p>Use the same mindset to handle difficult tasks tomorrow and the rest of the week. Do the most difficult tasks at your most productive hour. Most people can get a lot done before noon. Figure out the time that brings out the best in you and concentrate on getting stuff done at that time.</p>
+							<h2>5. Don’t work on a task more than once</h2>
+							<p>Don’t put things on hold only to deal with them again later. Learn to handle incoming tasks once and move on. How many times have you opened the same email only to close it and open it again at another time? Don’t save an email or a phone call to deal with later.</p>
+							<p>Once something new gets your attention, if it’s not on your list of things to do within the day you should delegate it or reply, if it takes no more than a few minutes to respond to it. If it takes more than five minutes, you are better off scheduling it for another time or day. You don’t want to be distracted while you’re in the flow.</p>
+							<p>If you enjoyed this post, you will love Postanly Weekly. It’s my FREE weekly digest of the best productivity, life and career improvement posts from around the web. It challenges you to become the best version of yourself.</p>
+						</div>
+					</div>
+				</div>
+				<div class="uk-width-1-3">
+					<div class="article-side">
+						<div class="side-author-info">
+							<div class="side-author-img">
+								<img src="asset/img/gravatar.png">
+							</div>
+							<div class="side-author-id-posts">
+								<p id="author-id">Ruofeng</p>
+							
+								<p id="author-posts">10 Posts</p>
+							</div>
+							<div class="side-author-buttons">
+								<button class="uk-button uk-button-primary uk-button-large">Follow</button>
+								<button class="uk-button uk-button-primary uk-button-large" style="float: right;">Message</button>
+							</div>
+						</div>
+						<div style="height: 35px;background: #eee;"></div>
+						<div class="side-other-article">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+<div style="height: 50px;"></div>
+    <footer class="ibee-footer">
+
+    <div class="uk-container uk-container-center">
+        <div class="uk-grid">
+            <div class="uk-width-1-2 uk-text-left">
+                &copy 2017 iBeiKe
+            </div>
+            <div class="uk-width-1-2 uk-text-right">
+                <a href="#">Terms</a>
+                <a href="#">Feedback</a>
+            </div>
+        </div>
+    </div>
+        
+    </footer>
+
+    <div id="ibee-back-to-top">
+        <a id="toTopButton"><i class="fa fa-arrow-up fa-5x"></i></a>
+    </div>
+
+
+    <div id="signin" class="uk-modal">
+    <div class="uk-modal-dialog">
+        <a class="uk-modal-close uk-close"></a>
+        <div class="uk-width-1-3 uk-container-center">
+            <img id="modal-logo" src="asset/img/logo2.png" width="120px">
+        </div>
+        <p>Please log in with the iBeiKe account</p>
+            <center>
+        <form class="uk-form">
+            <fieldset>
+            <div class="uk-form-row">
+            <input class="uk-form-large" type="text" placeholder="Email">
+            </div>
+            <div class="uk-form-row">
+            <input class="uk-form-large" type="password" placeholder="Password">
+            </div>
+            <div id="modal-submit">
+                <label><input type="checkbox">Save PW</label>
+                <button class="uk-button uk-button-primary uk-button-large">LOG IN</button>
+            </div>
+            </fieldset>
+        </form>
+            </center>
+    </div>
+    </div>
+</body>
+</html>

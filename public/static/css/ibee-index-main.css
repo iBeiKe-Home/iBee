@@ -1,0 +1,37 @@
+.ibee-article{
+	border-radius: 2px;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+}
+.ibee-article-author-date time em{
+	color: #000;
+}
+.uk-label{
+	background: #FFCCCC;
+	color: #231F20;
+	border-radius: 2px;
+}
+.article-comments span,.article-likes span{
+	margin-left: 6px;
+}
+.uk-pagination > li > a, .uk-pagination > li > span{
+	font-size: 20px;
+	background: #F7C205;
+	padding: 5px 8px;
+	border-radius: 2px;
+}
+.uk-pagination > .uk-active > span{
+	background: #231F20;
+	color: #fff;
+}
+.uk-pagination > .uk-disabled > span{
+	background:#F5C934;
+}
+.uk-pagination > li > a:hover, .uk-pagination > li > a:focus{
+	background: #F5C934;
+	color: #000;
+}
+select.uk-form-large, textarea.uk-form-large, input[type].uk-form-large, input:not([type]).uk-form-large{
+	width: 280px;
+	border: 1px solid #bbb;
+	border-radius: 2px;
+}
